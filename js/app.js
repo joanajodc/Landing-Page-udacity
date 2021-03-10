@@ -64,7 +64,7 @@ function scrollToAnchor() {
   document.querySelectorAll(".navbar__menu").forEach((anchor) => {
     anchor.addEventListener("click", function (event) {
       event.preventDefault();
-      let active_ele = document.getElementById("${event.target.dataset.nav}");
+      let active_ele = document.getElementById(`${event.target.dataset.nav}`);
       active_ele.scrollIntoView({
         behavior: "smooth",
       });
