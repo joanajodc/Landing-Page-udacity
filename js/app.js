@@ -59,12 +59,15 @@ window.addEventListener("scroll", function () {
   makeActive();
 });
 
-// Scroll to anchor ID using scrollTO event: id="section1" etc
-document.querySelectorAll(".navbar__menu").forEach((anchor) => {
+// Scroll to anchor ID using scrollTO event:
+function scrollToAnchor() {
+  document.querySelectorAll(".navbar__menu").forEach((anchor) => {
     anchor.addEventListener("click", function (event) {
       event.preventDefault();
       let active_ele = document.getElementById("${event.target.dataset.nav}");
-      active_ele.scrollIntoView({ behavior: "smooth" });
+      active_ele.scrollIntoView({
+        behavior: "smooth",
+      });
     });
   });
 }
