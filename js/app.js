@@ -60,13 +60,11 @@ window.addEventListener("scroll", function () {
 });
 
 // Scroll to anchor ID using scrollTO event: id="section1" etc
-function scrollToAnchor() {
-  document.querySelectorAll(".navbar__menu").forEach((anchor) => {
+document.querySelectorAll(".navbar__menu").forEach((anchor) => {
     anchor.addEventListener("click", function (event) {
       event.preventDefault();
-      document.querySelector(this.getAttribute("id")).scrollIntoView({
-        behavior: "smooth",
-      });
+      let active_ele = document.getElementById("${event.target.dataset.nav}");
+      active_ele.scrollIntoView({ behavior: "smooth" });
     });
   });
 }
